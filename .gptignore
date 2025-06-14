@@ -1,0 +1,74 @@
+# Files and directories to exclude from AI context
+
+# Dependencies
+node_modules/
+vendor/
+venv/
+.venv/
+env/
+*.egg-info/
+
+# Build outputs
+dist/
+build/
+out/
+target/
+*.pyc
+__pycache__/
+
+# Large files
+*.pdf
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.dmg
+*.iso
+*.jar
+
+# Media files
+*.mp4
+*.mp3
+*.wav
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.svg
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.db
+
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Secrets and credentials
+.env
+.env.*
+*_secret*
+*_private*
+*.pem
+*.key
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+*.cover
+
+# Documentation builds
+docs/_build/
+site/
+
+# Custom exclusions
+# Add your own patterns below

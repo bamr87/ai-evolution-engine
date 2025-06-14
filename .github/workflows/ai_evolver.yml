@@ -1,0 +1,180 @@
+name: 🤖 Autonomous Repository Evolution Engine
+
+on:
+  # Manual trigger with rich parameters
+  workflow_dispatch:
+    inputs:
+      prompt_file_path:
+        description: 'Path to the evolution prompt file'
+        required: false
+        default: 'prompts/next_evolution.md'
+        type: string
+      custom_prompt_text:
+        description: 'Direct prompt text (overrides file if provided)'
+        required: false
+        type: string
+      evolution_strategy:
+        description: 'Evolution strategy'
+        required: false
+        default: 'balanced'
+        type: choice
+        options:
+          - conservative
+          - balanced
+          - experimental
+          - refactor
+          - performance
+          - security
+      target_branch:
+        description: 'Base branch for evolution'
+        required: false
+        default: 'main'
+        type: string
+      auto_merge:
+        description: 'Auto-merge if confidence threshold met'
+        required: false
+        default: false
+        type: boolean
+      dry_run:
+        description: 'Preview changes without applying'
+        required: false
+        default: false
+        type: boolean
+      
+  # Scheduled evolution
+  schedule:
+    - cron: '0 2 * * 1'  # Weekly on Monday at 2 AM UTC
+    
+  # Issue-triggered evolution
+  issues:
+    types: [labeled]
+    
+  # Repository dispatch for API triggers
+  repository_dispatch:
+    types: [evolution]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+jobs:
+  evolve:
+    name: 🧬 Evolution Cycle
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    outputs:
+      evolution_id: ${{ steps.setup.outputs.evolution_id }}
+      branch_name: ${{ steps.setup.outputs.branch_name }}
+      pr_number: ${{ steps.create_pr.outputs.pr_number }}
+      
+    steps:
+      # Setup and initialization
+      - name: 🎯 Initialize Evolution
+        id: setup
+        run: |
+          echo "🧬 Starting Evolution Cycle..."
+          EVOLUTION_ID=$(uuidgen | tr '[:upper:]' '[:lower:]')
+          echo "evolution_id=$EVOLUTION_ID" >> $GITHUB_OUTPUT
+          
+          TIMESTAMP=$(date -u +"%Y%m%d-%H%M%S")
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+          
+          echo "Evolution ID: $EVOLUTION_ID"
+          echo "Timestamp: $TIMESTAMP"
+          
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT_REPO_WORKFLOW || secrets.GITHUB_TOKEN }}
+          
+      - name: 🔧 Setup Tools
+        run: |
+          # Install required tools
+          sudo apt-get update
+          sudo apt-get install -y jq tree
+          
+          # Install GitHub CLI
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          sudo apt update
+          sudo apt install gh -y
+          
+      - name: 🧠 Load Evolution Configuration
+        id: config
+        run: |
+          # Load configuration from .evolution.yml
+          if [ -f .evolution.yml ]; then
+            echo "Loading evolution configuration..."
+            
+            # Extract key configuration values
+            DEFAULT_STRATEGY=$(yq eval '.evolution.default_strategy // "balanced"' .evolution.yml)
+            MAX_TOKENS=$(yq eval '.evolution.max_tokens_per_evolution // 100000' .evolution.yml)
+            AUTO_MERGE_THRESHOLD=$(yq eval '.evolution.auto_merge_threshold // 0.95' .evolution.yml)
+            
+            echo "default_strategy=$DEFAULT_STRATEGY" >> $GITHUB_OUTPUT
+            echo "max_tokens=$MAX_TOKENS" >> $GITHUB_OUTPUT
+            echo "auto_merge_threshold=$AUTO_MERGE_THRESHOLD" >> $GITHUB_OUTPUT
+          else
+            echo "No .evolution.yml found, using defaults"
+            echo "default_strategy=balanced" >> $GITHUB_OUTPUT
+            echo "max_tokens=100000" >> $GITHUB_OUTPUT
+            echo "auto_merge_threshold=0.95" >> $GITHUB_OUTPUT
+          fi
+          
+      # Determine evolution trigger and load prompt
+      - name: 🎯 Determine Evolution Trigger
+        id: trigger
+        run: |
+          PROMPT_TEXT=""
+          TRIGGER_TYPE=""
+          
+          # Check if triggered by issue
+          if [[ "${{ github.event_name }}" == "issues" ]]; then
+            if [[ "${{ github.event.label.name }}" == "evolution-request" ]]; then
+              TRIGGER_TYPE="issue"
+              PROMPT_TEXT="${{ github.event.issue.body }}"
+              echo "Triggered by issue #${{ github.event.issue.number }}"
+            fi
+          # Check for custom prompt text
+          elif [[ -n "${{ inputs.custom_prompt_text }}" ]]; then
+            TRIGGER_TYPE="custom"
+            PROMPT_TEXT="${{ inputs.custom_prompt_text }}"
+            echo "Using custom prompt text"
+          # Check for repository dispatch
+          elif [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
+            TRIGGER_TYPE="api"
+            PROMPT_TEXT="${{ github.event.client_payload.prompt }}"
+            echo "Triggered via API"
+          # Default to file-based prompt
+          else
+            TRIGGER_TYPE="file"
+            PROMPT_FILE="${{ inputs.prompt_file_path || 'prompts/next_evolution.md' }}"
+            
+            if [ -f "$PROMPT_FILE" ]; then
+              PROMPT_TEXT=$(cat "$PROMPT_FILE")
+              echo "Using prompt file: $PROMPT_FILE"
+            else
+              echo "❌ Prompt file not found: $PROMPT_FILE"
+              exit 1
+            fi
+          fi
+          
+          # Save prompt for later use
+          echo "$PROMPT_TEXT" > /tmp/evolution_prompt.txt
+          echo "trigger_type=$TRIGGER_TYPE" >> $GITHUB_OUTPUT
+          
+      # Collect repository context
+      - name: 📊 Collect Repository Context
+        id: context
+        run: |
+          echo "📊 Analyzing repository structure..."
+          
+          # Create context directory
+          mkdir -p /tmp/evolution_context
+          
+          # Repository statistics
+          cat > /tmp/evolution_

@@ -1,0 +1,51 @@
+version: 1.0
+
+# Evolution configuration
+evolution:
+  default_strategy: balanced        # conservative | balanced | experimental | refactor | performance | security
+  max_tokens_per_evolution: 100000  # Maximum tokens to use per evolution
+  require_tests: true               # Require tests for new code
+  auto_merge_threshold: 0.95        # Confidence threshold for auto-merge (0-1)
+  branch_protection: true           # Enable branch protection rules
+  
+# AI provider configuration  
+ai:
+  primary_provider: ${AI_PROVIDER}
+  fallback_provider: null
+  retry_on_error: true
+  providers:
+    - name: openai
+      enabled: true
+      model: gpt-4-turbo-preview
+      temperature: 0.7
+      max_retries: 3
+      timeout: 300
+    - name: anthropic
+      enabled: false
+      model: claude-3-opus-20240229
+      temperature: 0.6
+      max_retries: 2
+      timeout: 300
+      
+# Quality assurance configuration
+quality:
+  min_test_coverage: 80             # Minimum test coverage percentage
+  require_documentation: true       # Require documentation updates
+  code_style: automatic            # strict | automatic | preserve
+  run_linters: true
+  security_scan: true
+  
+# Monitoring and metrics
+monitoring:
+  track_costs: true
+  cost_alert_threshold: 10.00      # USD
+  metrics_dashboard: enabled
+  webhook_notifications: false
+  webhook_url: ""
+  
+# Advanced features
+advanced:
+  use_caching: true                # Cache similar prompts
+  incremental_mode: true           # Only send changed files for large repos
+  parallel_processing: false       # Process multiple files in parallel
+  custom_models_path: "./models"   # Path to custom model implementations
