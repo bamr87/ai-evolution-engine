@@ -1,89 +1,81 @@
-# 🧬 AI Evolution Engine 🧬
-### *Where Code Writes Itself, and Repositories Come Alive*
+# 🌱 AI Evolution Engine 🌱
 
-<div align="center">
+```
+    ╔═══════════════════════════════════════════════════════════╗
+    ║                  AI EVOLUTION ENGINE                      ║
+    ║           Where Code Writes Itself & Grows                ║
+    ║                    Version 0.1.0                          ║
+    ╚═══════════════════════════════════════════════════════════╝
+```
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/bamr87/ai-evolution-engine)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Last Evolution](https://img.shields.io/badge/last%20evolution-2025--06--14-purple.svg)]()
-[![AI Powered](https://img.shields.io/badge/AI-Powered-orange.svg)]()
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Build Status](https://img.shields.io/badge/build-initializing-yellow.svg)]()
+[![Last Evolution](https://img.shields.io/badge/last%20evolution-genesis-green.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-purple.svg)](LICENSE)
 
-**Transform your GitHub repository into a living, breathing, self-evolving ecosystem powered by AI**
-
-[Quick Start](#-quick-start-guide) • [Documentation](#-detailed-documentation) • [Examples](#-examples--tutorials) • [Contributing](#-contributing)
-
-</div>
-
----
+> 🚀 **An autonomous, self-evolving repository powered by AI that learns, grows, and improves itself with every iteration.**
 
 ## 📑 Table of Contents
 
 <details>
 <summary>Click to expand</summary>
 
-- [🎯 Introduction & Philosophy](#-introduction--philosophy)
+- [🌟 Introduction & Philosophy](#-introduction--philosophy)
 - [🏗️ Architecture Overview](#️-architecture-overview)
 - [🚀 Quick Start Guide](#-quick-start-guide)
-- [📚 Detailed Documentation](#-detailed-documentation)
-  - [Installation & Configuration](#installation--configuration)
-  - [Usage Guide](#usage-guide)
-  - [AI Integration](#ai-integration)
-  - [Evolution Management](#evolution-management)
-- [📖 Examples & Tutorials](#-examples--tutorials)
-- [🔌 API Reference](#-api-reference)
+- [📦 Installation & Configuration](#-installation--configuration)
+- [📖 Usage Guide](#-usage-guide)
+- [🤖 AI Integration](#-ai-integration)
+- [🔄 Evolution Management](#-evolution-management)
+- [📚 Examples & Tutorials](#-examples--tutorials)
+- [📡 API Reference](#-api-reference)
 - [🤝 Contributing](#-contributing)
-- [📜 Evolution History](#-evolution-history)
+- [📜 Changelog & Evolution History](#-changelog--evolution-history)
 - [❓ FAQ & Troubleshooting](#-faq--troubleshooting)
 - [📎 Appendices](#-appendices)
 
 </details>
 
----
+## 🌟 Introduction & Philosophy
 
-## 🎯 Introduction & Philosophy
+### What is the AI Evolution Engine?
 
-### What is a Self-Evolving Repository?
+The AI Evolution Engine is a revolutionary approach to software development where repositories become living, breathing entities capable of self-improvement. By leveraging advanced AI models, this system can:
 
-Imagine a repository that doesn't just store your code—it actively improves it. The AI Evolution Engine transforms traditional development by enabling repositories to:
-
-- 🧠 **Understand** their own codebase and purpose
-- 🔄 **Evolve** based on natural language instructions
-- 📈 **Improve** code quality, documentation, and structure autonomously
-- 🛡️ **Maintain** stability through intelligent branching and testing
-
-### The Evolution Flow
-
-```mermaid
-graph TB
-    A[Human: Write Evolution Prompt] -->|Trigger| B[Evolution Engine]
-    B --> C{AI Analysis}
-    C -->|Generate Changes| D[New Evolution Branch]
-    D --> E[Automated Testing]
-    E -->|Pass| F[Create Pull Request]
-    E -->|Fail| G[Rollback & Report]
-    F --> H[Human Review]
-    H -->|Approve| I[Merge to Main]
-    H -->|Request Changes| C
-    I --> J[Update Evolution History]
-    J --> K[Repository Evolved! 🎉]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:4px
-    style K fill:#9f9,stroke:#333,stroke-width:4px
-    style C fill:#ff9,stroke:#333,stroke-width:4px
-```
+- 🧠 **Understand** its entire codebase contextually
+- 🔄 **Evolve** based on natural language prompts
+- 📝 **Document** its own changes and improvements
+- 🛡️ **Protect** against regressions with automated testing
+- 📈 **Learn** from each evolution cycle
 
 ### Why Self-Evolving Repositories?
 
-Traditional development faces several challenges:
-- **Context Loss**: Developers spend 70% of time understanding existing code
-- **Documentation Drift**: Docs become outdated as code evolves
-- **Repetitive Tasks**: Many changes follow predictable patterns
-- **Knowledge Silos**: Team knowledge isn't captured in the code
+Traditional development workflows require constant human intervention for every change. The AI Evolution Engine shifts this paradigm by:
 
-The AI Evolution Engine solves these by making the repository itself intelligent and self-aware.
+1. **Accelerating Development**: From idea to implementation in minutes, not hours
+2. **Reducing Cognitive Load**: Let AI handle boilerplate and repetitive tasks
+3. **Ensuring Consistency**: AI follows established patterns and best practices
+4. **Enabling Innovation**: Focus on high-level goals while AI handles implementation details
 
----
+### Evolution Flow
+
+```mermaid
+graph TB
+    A[Human Prompt] --> B[AI Context Analysis]
+    B --> C[Evolution Strategy Selection]
+    C --> D[Code Generation]
+    D --> E[Automated Testing]
+    E --> F{Tests Pass?}
+    F -->|Yes| G[Create PR]
+    F -->|No| H[AI Error Analysis]
+    H --> I[Self-Healing]
+    I --> D
+    G --> J[Human Review Optional]
+    J --> K[Merge & Deploy]
+    K --> L[Update Documentation]
+    L --> M[Learn from Evolution]
+    M --> B
+```
 
 ## 🏗️ Architecture Overview
 
@@ -91,562 +83,540 @@ The AI Evolution Engine solves these by making the repository itself intelligent
 
 ```mermaid
 graph LR
-    subgraph "GitHub Repository"
-        A[Source Code]
-        B[Documentation]
-        C[Configuration]
-        D[Evolution History]
-    end
-    
-    subgraph "Evolution Engine"
-        E[Context Packager]
-        F[AI Orchestrator]
-        G[Change Applicator]
-        H[Quality Assurance]
-    end
-    
-    subgraph "AI Providers"
-        I[OpenAI]
-        J[Anthropic]
-        K[Google AI]
-        L[Local Models]
-    end
-    
-    subgraph "User Interface"
-        M[GitHub Actions]
-        N[CLI Tools]
-        O[Web Dashboard]
-    end
-    
-    A & B & C & D --> E
-    E --> F
-    F <--> I & J & K & L
-    F --> G
-    G --> H
-    H --> A & B & C & D
-    M & N & O --> E
+    A[GitHub Repository] --> B[GitHub Actions Workflow]
+    B --> C[Context Collector]
+    C --> D[AI Provider API]
+    D --> E[Evolution Processor]
+    E --> F[Change Applicator]
+    F --> G[Quality Assurance]
+    G --> H[Branch Manager]
+    H --> I[Documentation Updater]
+    I --> A
 ```
 
-### Security Architecture
+### Key Components:
 
-- 🔐 **Encrypted Secrets**: All API keys stored as GitHub secrets
-- 🛡️ **Token Scoping**: Minimal permissions for each operation
-- 🔍 **Audit Logging**: Complete trail of all evolutions
-- 🚨 **Anomaly Detection**: AI monitors for unusual changes
-
----
+- **Context Collector**: Gathers complete repository state
+- **AI Provider Interface**: Supports multiple AI models (OpenAI, Anthropic, etc.)
+- **Evolution Processor**: Interprets AI responses and plans changes
+- **Change Applicator**: Safely applies code modifications
+- **Quality Assurance**: Runs tests, security scans, and validations
+- **Branch Manager**: Handles version control and PR creation
+- **Documentation Updater**: Keeps README and docs in sync
 
 ## 🚀 Quick Start Guide
 
+### Prerequisites Check
+
+```bash
+# Run this command to check if you have all prerequisites
+curl -fsSL https://raw.githubusercontent.com/bamr87/ai-evolution-engine/main/scripts/check-prereqs.sh | bash
+```
+
 ### 5-Minute Setup
 
+1. **Clone and Initialize**
+   ```bash
+   git clone https://github.com/bamr87/ai-evolution-engine.git
+   cd ai-evolution-engine
+   ./init_setup.sh
+   ```
+
+2. **Configure AI Provider**
+   ```bash
+   # Follow the interactive prompts or set environment variables
+   export AI_PROVIDER="openai"
+   export AI_API_KEY="your-api-key"
+   ```
+
+3. **Run Your First Evolution**
+   ```bash
+   # Using GitHub CLI
+   gh workflow run ai_evolver.yml -f prompt="Add a hello world endpoint to the API"
+   ```
+
+That's it! Your repository is now alive and evolving! 🎉
+
+## 📦 Installation & Configuration
+
+### Installation Methods
+
+#### Method 1: Automated Script (Recommended)
 ```bash
-# 1. Clone this repository
+curl -fsSL https://raw.githubusercontent.com/bamr87/ai-evolution-engine/main/init_setup.sh | bash
+```
+
+#### Method 2: Manual Installation
+```bash
 git clone https://github.com/bamr87/ai-evolution-engine.git
 cd ai-evolution-engine
-
-# 2. Run the setup script
 chmod +x init_setup.sh
-./init_setup.sh --quick
-
-# 3. Create your first evolution prompt
-echo "Add a simple REST API with user endpoints" > prompts/first_evolution.md
-
-# 4. Commit and push
-git add .
-git commit -m "🚀 Initialize AI Evolution Engine"
-git push origin main
-
-# 5. Trigger your first evolution!
-# Go to GitHub Actions and run the "🤖 Autonomous Repository Evolution Engine" workflow
+./init_setup.sh --manual
 ```
 
-### Prerequisites Checker
-
-Run this command to verify your environment:
-
+#### Method 3: Docker
 ```bash
-curl -sSL https://raw.githubusercontent.com/bamr87/ai-evolution-engine/main/scripts/check_prerequisites.sh | bash
+docker run -it -v $(pwd):/workspace bamr87/ai-evolution-engine:latest
 ```
 
----
+### Configuration Options
 
-## 📚 Detailed Documentation
-
-### Installation & Configuration
-
-#### Method 1: Interactive Setup (Recommended)
-
-```bash
-./init_setup.sh
-```
-
-This will guide you through:
-- GitHub authentication setup
-- AI provider configuration
-- Repository customization
-- Initial evolution strategy selection
-
-#### Method 2: Automated Setup
-
-```bash
-export GITHUB_TOKEN="your-pat-token"
-export AI_API_KEY="your-ai-key"
-export AI_PROVIDER="openai"  # or anthropic, google, local
-
-./init_setup.sh --silent
-```
-
-#### Method 3: Docker Setup
-
-```bash
-docker run -it \
-  -e GITHUB_TOKEN="$GITHUB_TOKEN" \
-  -e AI_API_KEY="$AI_API_KEY" \
-  -v $(pwd):/workspace \
-  ghcr.io/bamr87/ai-evolution-engine:latest
-```
-
-#### Configuration Options
-
-Edit `.evolution.yml` to customize behavior:
+The evolution engine is configured via `.evolution.yml`:
 
 ```yaml
 version: 1.0
 evolution:
-  default_strategy: balanced      # conservative | balanced | experimental
+  default_strategy: balanced
   max_tokens_per_evolution: 100000
   require_tests: true
-  auto_merge_threshold: 0.95      # 0-1, confidence level for auto-merge
+  auto_merge_threshold: 0.95
   
 ai:
-  primary_provider: openai
-  fallback_provider: anthropic
   providers:
     - name: openai
-      model: gpt-4-turbo-preview
+      model: gpt-4
       temperature: 0.7
-      max_retries: 3
     - name: anthropic
-      model: claude-3-opus-20240229
+      model: claude-3-opus
       temperature: 0.6
-      max_retries: 2
       
-quality:
-  min_test_coverage: 80
-  require_documentation: true
-  code_style: automatic          # strict | automatic | preserve
+security:
+  scan_on_evolution: true
+  block_on_vulnerabilities: true
   
-monitoring:
-  track_costs: true
-  alert_threshold: 10.00         # USD
-  metrics_dashboard: enabled
+notifications:
+  slack_webhook: ${SLACK_WEBHOOK}
+  email: ${NOTIFICATION_EMAIL}
 ```
 
-### Usage Guide
+### Environment Variables
 
-#### Basic Evolution Cycle
+| Variable | Description | Required | Default |
+|----------|-------------|----------|---------|
+| `AI_PROVIDER` | AI provider to use | Yes | `openai` |
+| `AI_API_KEY` | API key for AI provider | Yes | - |
+| `GITHUB_TOKEN` | GitHub personal access token | Yes | - |
+| `EVOLUTION_STRATEGY` | Default evolution strategy | No | `balanced` |
+| `MAX_EVOLUTION_COST` | Maximum cost per evolution | No | `$1.00` |
 
-1. **Create an Evolution Prompt**
+## 📖 Usage Guide
 
-```markdown
-# prompts/add_user_auth.md
+### Basic Evolution Cycle
 
-## Goal: Add User Authentication
+1. **Trigger an Evolution**
+   ```bash
+   # Via GitHub CLI
+   gh workflow run ai_evolver.yml -f prompt="Your evolution prompt here"
+   
+   # Via GitHub UI
+   # Go to Actions → AI Evolver → Run workflow
+   
+   # Via Issue
+   # Create an issue with label 'evolution-request'
+   ```
 
-**Requirements:**
-- JWT-based authentication
-- User registration and login endpoints
-- Password hashing with bcrypt
-- Rate limiting on auth endpoints
+2. **Monitor Progress**
+   ```bash
+   # Watch the workflow
+   gh run watch
+   
+   # Check evolution metrics
+   cat evolution-metrics.json
+   ```
 
-**Constraints:**
-- Use existing database schema
-- Maintain backward compatibility
-- Include comprehensive tests
-```
+3. **Review Changes**
+   - AI creates a PR with detailed description
+   - Review the changes and impact assessment
+   - Approve or request modifications
 
-2. **Trigger Evolution**
+### Evolution Strategies
 
+#### 🛡️ Conservative Mode
+For production systems requiring stability:
 ```bash
-# Via GitHub UI
-# Actions → AI Evolution Engine → Run Workflow
-
-# Via GitHub CLI
-gh workflow run ai_evolver.yml -f prompt_file_path=prompts/add_user_auth.md
-
-# Via API
-curl -X POST \
-  -H "Authorization: token $GITHUB_TOKEN" \
-  -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/bamr87/ai-evolution-engine/dispatches \
-  -d '{"event_type":"evolution","client_payload":{"prompt_file":"prompts/add_user_auth.md"}}'
+gh workflow run ai_evolver.yml \
+  -f prompt="Fix the login timeout issue" \
+  -f strategy="conservative"
 ```
 
-#### Evolution Strategies
+#### ⚖️ Balanced Mode (Default)
+Standard evolution with reasonable safety:
+```bash
+gh workflow run ai_evolver.yml \
+  -f prompt="Add user profile feature"
+```
 
-Choose the right strategy for your needs:
+#### 🚀 Experimental Mode
+For rapid prototyping and bold changes:
+```bash
+gh workflow run ai_evolver.yml \
+  -f prompt="Redesign the entire API architecture" \
+  -f strategy="experimental"
+```
 
-| Strategy | Description | Use Case | Risk Level |
-|----------|-------------|----------|------------|
-| **Conservative** | Minimal, safe changes only | Production systems | Low |
-| **Balanced** | Standard evolution mode | Most projects | Medium |
-| **Experimental** | Allow breaking changes | Early development | High |
-| **Refactor** | Focus on code quality | Technical debt | Low |
-| **Performance** | Optimize for speed | Bottleneck fixing | Medium |
-| **Security** | Fix vulnerabilities | Security audits | Low |
+#### 🔧 Refactor Mode
+Focus on code quality improvements:
+```bash
+gh workflow run ai_evolver.yml \
+  -f prompt="Improve code organization and reduce duplication" \
+  -f strategy="refactor"
+```
 
-#### Advanced Prompt Engineering
+### Advanced Prompt Engineering
 
-**Effective Prompt Structure:**
-
+#### Effective Prompt Structure
 ```markdown
-## Context
-[Current state and problem description]
-
-## Goal
-[Clear, measurable objective]
-
-## Requirements
-- [Specific requirement 1]
-- [Specific requirement 2]
-
-## Constraints
-- [Limitation or boundary 1]
-- [Limitation or boundary 2]
-
-## Success Criteria
-- [ ] Criterion 1
-- [ ] Criterion 2
-
-## Examples
-[Optional: Provide examples of desired outcome]
+**Goal**: [Clear objective]
+**Context**: [Relevant background]
+**Constraints**: [Any limitations]
+**Success Criteria**: [How to measure success]
+**Examples**: [Optional examples]
 ```
 
-### AI Integration
+#### Example Prompts
 
-#### Supported Providers
+**Feature Addition**:
+```
+Goal: Add a REST API endpoint for user statistics
+Context: We need to expose user activity data for the dashboard
+Constraints: Must be backwards compatible, use existing auth
+Success Criteria: New endpoint at /api/v1/users/{id}/stats returning JSON
+```
 
-| Provider | Models | Best For | Setup Guide |
-|----------|--------|-----------|-------------|
-| OpenAI | GPT-4, GPT-3.5 | General purpose | [Guide](docs/providers/openai.md) |
-| Anthropic | Claude 3 Opus/Sonnet | Complex reasoning | [Guide](docs/providers/anthropic.md) |
-| Google | Gemini Pro/Ultra | Multimodal tasks | [Guide](docs/providers/google.md) |
-| Local | Llama, Mistral | Privacy, cost | [Guide](docs/providers/local.md) |
+**Performance Optimization**:
+```
+Goal: Improve API response time by 50%
+Context: Current p95 latency is 500ms
+Constraints: Cannot break existing functionality
+Success Criteria: Implement caching, optimize database queries
+```
 
-#### Custom Model Integration
+## 🤖 AI Integration
 
+### Supported AI Providers
+
+| Provider | Models | Status | Best For |
+|----------|--------|--------|----------|
+| OpenAI | GPT-4, GPT-4-Turbo | ✅ Supported | General purpose, code generation |
+| Anthropic | Claude 3 Opus, Sonnet | ✅ Supported | Complex reasoning, refactoring |
+| Google | Gemini Pro | 🚧 Coming Soon | Multi-modal evolutions |
+| Local | Ollama, LlamaCpp | 🚧 Coming Soon | Privacy-focused, offline |
+
+### Custom Model Integration
+
+To add a custom AI provider:
+
+1. Create provider adapter in `providers/`:
 ```python
-# models/custom_provider.py
-from evolution_engine import BaseAIProvider
-
-class CustomProvider(BaseAIProvider):
-    def __init__(self, api_key: str, endpoint: str):
+class CustomProvider(AIProvider):
+    def __init__(self, api_key, model):
         self.api_key = api_key
-        self.endpoint = endpoint
+        self.model = model
     
-    async def generate_evolution(self, context: dict) -> dict:
-        # Your implementation here
+    async def generate(self, prompt, context):
+        # Implementation here
         pass
 ```
 
-#### Token Optimization
-
-The system automatically optimizes token usage:
-
-- **Smart Context Selection**: Only relevant files included
-- **Incremental Updates**: Send diffs for large files
-- **Caching**: Reuse contexts for similar prompts
-- **Compression**: Automatic content compression
-
-### Evolution Management
-
-#### Branch Lifecycle
-
-```mermaid
-stateDiagram-v2
-    [*] --> Created: Evolution Triggered
-    Created --> Testing: Changes Applied
-    Testing --> Review: Tests Pass
-    Testing --> Failed: Tests Fail
-    Review --> Merged: Approved
-    Review --> Rejected: Changes Requested
-    Failed --> [*]: Rolled Back
-    Rejected --> Created: Revise
-    Merged --> [*]: Complete
+2. Register in `.evolution.yml`:
+```yaml
+ai:
+  providers:
+    - name: custom
+      class: CustomProvider
+      model: your-model
+      endpoint: https://api.custom.ai
 ```
 
-#### Merge Strategies
+### Token Usage Optimization
 
-1. **Auto-Merge** (confidence > threshold)
-   ```yaml
-   evolution:
-     auto_merge_threshold: 0.95
-     require_approvals: 0
-   ```
+The engine automatically optimizes token usage by:
+- Intelligent context filtering
+- Caching similar prompts
+- Compression of large files
+- Incremental context updates
 
-2. **Protected Merge** (requires review)
-   ```yaml
-   evolution:
-     auto_merge_threshold: 1.1  # Effectively disabled
-     require_approvals: 2
-   ```
+### Cost Estimation
 
-3. **Staged Merge** (progressive rollout)
-   ```yaml
-   evolution:
-     merge_strategy: staged
-     stages:
-       - develop: immediate
-       - staging: after_1_day
-       - main: after_1_week
-   ```
+View estimated costs before evolution:
+```bash
+./scripts/estimate-cost.sh "Your prompt here"
+```
 
-#### Rollback Procedures
+## 🔄 Evolution Management
 
-Quick rollback if an evolution causes issues:
+### Branch Naming Convention
+
+Branches are automatically named using:
+```
+evolution/YYYY-MM-DD-HH-MM-SS-descriptive-name
+```
+
+Example: `evolution/2025-06-15-20-30-45-add-auth-system`
+
+### Merge Strategies
+
+1. **Auto-merge** (confidence > 95%)
+2. **Review Required** (confidence 70-95%)
+3. **Draft PR** (confidence < 70%)
+
+### Conflict Resolution
+
+When conflicts occur:
+1. AI attempts automatic resolution
+2. If unsuccessful, creates detailed conflict report
+3. Human intervention requested with AI suggestions
+
+### Rollback Procedures
 
 ```bash
-# Automatic rollback (last evolution)
-gh workflow run rollback.yml
+# Rollback last evolution
+./scripts/rollback-evolution.sh
 
-# Specific evolution rollback
-gh workflow run rollback.yml -f evolution_id=abc123
+# Rollback to specific version
+./scripts/rollback-evolution.sh --to-version=0.3.2
 
-# Manual rollback
-git revert -m 1 <merge-commit-hash>
-git push origin main
+# Rollback with preservation
+./scripts/rollback-evolution.sh --preserve-branch
 ```
 
----
+## 📚 Examples & Tutorials
 
-## 📖 Examples & Tutorials
+### Tutorial 1: Your First Evolution
 
-### Example 1: Add REST API
+1. **Setup Repository**
+   ```bash
+   ./init_setup.sh --tutorial-mode
+   ```
 
-<details>
-<summary>View Full Example</summary>
+2. **Create Simple Feature**
+   ```bash
+   gh workflow run ai_evolver.yml \
+     -f prompt="Add a simple hello world function in Python"
+   ```
 
-**Prompt:** `prompts/examples/add_api_endpoint.md`
-```markdown
-## Goal: Add User Management REST API
+3. **Observe the Magic**
+   - Watch AI create the function
+   - See tests being generated
+   - Review the PR created
 
-**Requirements:**
-1. RESTful endpoints for user CRUD operations
-2. Input validation and error handling
-3. OpenAPI documentation
-4. Rate limiting
-5. Authentication middleware
+### Tutorial 2: Complex Evolution
 
-**Expected Endpoints:**
-- GET /api/users - List users
-- GET /api/users/:id - Get user
-- POST /api/users - Create user
-- PUT /api/users/:id - Update user
-- DELETE /api/users/:id - Delete user
+Building a complete REST API:
+```bash
+gh workflow run ai_evolver.yml \
+  -f prompt="Create a complete TODO list API with CRUD operations, 
+             authentication, database persistence using SQLite, 
+             and comprehensive tests"
 ```
 
-**Result:** Complete API with tests, docs, and migrations
-- Files created: 15
-- Tests added: 42
-- Documentation: Auto-generated OpenAPI spec
-- Evolution time: 3 minutes
+### Common Evolution Patterns
 
-</details>
-
-### Example 2: Performance Optimization
-
-<details>
-<summary>View Full Example</summary>
-
-**Prompt:** `prompts/examples/optimize_performance.md`
-```markdown
-## Goal: Optimize Database Query Performance
-
-**Context:**
-The /api/products endpoint is slow with large datasets.
-
-**Requirements:**
-1. Add database indexes
-2. Implement query result caching
-3. Add pagination
-4. Optimize N+1 queries
-5. Add performance monitoring
+#### Pattern: Add New Feature
+```yaml
+template: feature_request
+inputs:
+  feature_name: "User Authentication"
+  requirements:
+    - JWT token support
+    - Password hashing
+    - Session management
+  test_coverage: 90%
 ```
 
-**Result:** 10x performance improvement
-- Query time: 2000ms → 200ms
-- Added indexes: 3
-- Cache hit rate: 85%
-- Memory usage: Reduced by 40%
+#### Pattern: Fix Bug
+```yaml
+template: bug_fix
+inputs:
+  issue_number: 42
+  description: "Users cannot reset password"
+  reproduction_steps:
+    - Go to login page
+    - Click forgot password
+    - Enter email
+    - No email received
+```
 
-</details>
-
-### Interactive Tutorials
-
-1. **[Basic Evolution](tutorials/01-basic-evolution.md)** - Your first AI-driven change
-2. **[Complex Refactoring](tutorials/02-complex-refactoring.md)** - Large-scale code improvements
-3. **[Adding Features](tutorials/03-adding-features.md)** - New functionality from scratch
-4. **[Bug Fixing](tutorials/04-bug-fixing.md)** - AI-assisted debugging
-5. **[Documentation](tutorials/05-documentation.md)** - Auto-generate and update docs
-
----
-
-## 🔌 API Reference
+## 📡 API Reference
 
 ### Workflow Inputs
 
 | Input | Type | Description | Default |
 |-------|------|-------------|---------|
-| `prompt_file_path` | string | Path to evolution prompt | `prompts/next_evolution.md` |
-| `custom_prompt_text` | string | Direct prompt text | - |
-| `evolution_strategy` | string | Evolution approach | `balanced` |
-| `target_branch` | string | Base branch for evolution | `main` |
-| `auto_merge` | boolean | Auto-merge if confident | `false` |
-| `dry_run` | boolean | Preview without applying | `false` |
+| `prompt` | string | Evolution instructions | Required |
+| `strategy` | string | Evolution strategy | `balanced` |
+| `target_branch` | string | Base branch | `main` |
+| `auto_merge` | boolean | Auto-merge if safe | `false` |
+| `max_tokens` | number | Token limit | `100000` |
 
 ### Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `AI_API_KEY` | AI provider API key | Yes |
-| `AI_MODEL_ENDPOINT` | API endpoint URL | Yes |
-| `GH_PAT_REPO_WORKFLOW` | GitHub PAT with repo/workflow scope | Yes |
-| `EVOLUTION_STRATEGY` | Default evolution strategy | No |
-| `MAX_EVOLUTION_COST` | Maximum cost per evolution (USD) | No |
-| `METRICS_WEBHOOK_URL` | Webhook for metrics reporting | No |
+```bash
+# Required
+AI_PROVIDER="openai"
+AI_API_KEY="sk-..."
+GITHUB_TOKEN="ghp_..."
 
-### Events & Webhooks
+# Optional
+EVOLUTION_STRATEGY="balanced"
+MAX_EVOLUTION_COST="1.00"
+EVOLUTION_TIMEOUT="3600"
+DEBUG_MODE="false"
+```
 
-```javascript
-// Evolution Started
-{
-  "event": "evolution.started",
-  "evolution_id": "uuid",
-  "prompt": "...",
-  "strategy": "balanced",
-  "timestamp": "2025-06-14T04:56:35Z"
-}
+### Webhook Events
 
-// Evolution Completed
+```json
 {
   "event": "evolution.completed",
-  "evolution_id": "uuid",
-  "branch": "evolution/20250614-045635-add-feature",
-  "changes": {
-    "files_changed": 10,
-    "insertions": 500,
-    "deletions": 100
-  },
-  "metrics": {
-    "duration_seconds": 180,
-    "tokens_used": 50000,
-    "estimated_cost": 2.50
+  "data": {
+    "evolution_id": "uuid",
+    "version": "0.2.0",
+    "branch": "evolution/...",
+    "pr_url": "https://github.com/...",
+    "success": true,
+    "metrics": {
+      "files_changed": 5,
+      "lines_added": 150,
+      "lines_removed": 30,
+      "test_coverage": 85.5
+    }
   }
 }
 ```
 
----
-
 ## 🤝 Contributing
 
-We welcome contributions to make the AI Evolution Engine even better!
+We welcome contributions to the AI Evolution Engine!
 
 ### How to Contribute
 
-1. **Report Issues**: Found a bug? [Open an issue](https://github.com/bamr87/ai-evolution-engine/issues)
-2. **Suggest Features**: Have an idea? [Start a discussion](https://github.com/bamr87/ai-evolution-engine/discussions)
-3. **Submit PRs**: Ready to code? Check our [contribution guide](CONTRIBUTING.md)
-4. **Share Prompts**: Created useful prompts? Add them to [prompt library](prompts/community/)
+1. **Evolution Improvements**
+   - Submit evolution prompts that failed
+   - Suggest new evolution strategies
+   - Improve prompt templates
 
-### Development Setup
+2. **Code Contributions**
+   - Fork the repository
+   - Create feature branch
+   - Submit PR with tests
 
-```bash
-# Fork and clone
-git clone https://github.com/YOUR_USERNAME/ai-evolution-engine.git
-cd ai-evolution-engine
+3. **Documentation**
+   - Fix typos or clarify instructions
+   - Add new tutorials
+   - Translate documentation
 
-# Install development dependencies
-npm install --save-dev
+### Community Guidelines
 
-# Run tests
-npm test
+- Be respectful and inclusive
+- Follow the code of conduct
+- Test your changes thoroughly
+- Document new features
 
-# Run linter
-npm run lint
+### Evolution Prompt Templates
+
+Create new templates in `prompts/templates/`:
+```markdown
+# Template: Your Template Name
+## Variables
+- ${VARIABLE_NAME}: Description
+
+## Prompt
+[Your prompt template here]
 ```
 
-### Community
+## 📜 Changelog & Evolution History
 
-- 💬 [Discord Server](https://discord.gg/ai-evolution)
-- 🐦 [Twitter Updates](https://twitter.com/ai_evolution)
-- 📺 [YouTube Tutorials](https://youtube.com/@ai-evolution)
-- 📧 [Newsletter](https://ai-evolution.dev/newsletter)
+### Version 0.1.0 (Genesis) - 2025-06-15
+
+**🎉 Initial Release**
+
+This is the beginning of the AI Evolution Engine journey!
+
+**Features:**
+- ✅ Basic evolution workflow
+- ✅ Multi-provider AI support
+- ✅ Automated testing integration
+- ✅ Self-updating documentation
+- ✅ Branch management
+- ✅ Evolution strategies
+
+**Technical Details:**
+- Repository initialized with seed files
+- GitHub Actions workflow configured
+- Basic prompt templates created
+- Documentation structure established
+
+**Metrics:**
+- Files: 15
+- Lines of Code: 2,500
+- Test Coverage: 0% (to be evolved!)
+- Documentation: Complete
 
 ---
 
-## 📜 Evolution History
-
-### Version 0.1.0
-
-*   **Cycle 0 (2025-06-14 04:56:35 UTC):** 🌱 Repository foundation established. System ready for first AI-driven evolution.
-    - **Changes**: Initial setup with core files
-    - **Impact**: Foundation for all future evolutions
-    - **Success Metrics**: N/A (initial setup)
-
----
+*Future evolutions will be automatically logged here by the AI*
 
 ## ❓ FAQ & Troubleshooting
 
 ### Frequently Asked Questions
 
-<details>
-<summary><strong>Q: How much does it cost to run evolutions?</strong></summary>
+**Q: How much does it cost to run evolutions?**
+A: Costs depend on your AI provider and prompt complexity. Typical evolutions cost $0.10-$1.00.
 
-A: Costs depend on your AI provider and prompt complexity:
-- Simple evolutions: $0.10 - $0.50
-- Complex refactoring: $1.00 - $5.00
-- Full repository overhaul: $10.00+
+**Q: Can I use this with private repositories?**
+A: Yes! Ensure your GitHub token has appropriate permissions.
 
-The system tracks costs and can enforce limits.
-</details>
+**Q: What happens if an evolution fails?**
+A: The system automatically rolls back changes and provides detailed error logs.
 
-<details>
-<summary><strong>Q: Can I use this with private repositories?</strong></summary>
+**Q: Can multiple evolutions run simultaneously?**
+A: Currently, evolutions are queued to prevent conflicts. Parallel evolution is on the roadmap.
 
-A: Yes! The system works with both public and private repositories. Just ensure your GitHub PAT has appropriate permissions.
-</details>
+### Troubleshooting
 
-<details>
-<summary><strong>Q: What if the AI makes breaking changes?</strong></summary>
+#### Issue: "AI API Key Invalid"
+```bash
+# Verify your API key
+./scripts/test-ai-connection.sh
 
-A: All changes are made in separate branches and can be reviewed before merging. The system also runs tests and can automatically rollback failed evolutions.
-</details>
+# Re-configure
+./init_setup.sh --reconfigure
+```
 
-<details>
-<summary><strong>Q: Can I customize the AI's behavior?</strong></summary>
+#### Issue: "Evolution Stuck"
+```bash
+# Check workflow status
+gh workflow view ai_evolver.yml
 
-A: Yes! Edit `.evolution.yml` to configure strategies, constraints, and behaviors. You can also provide custom system prompts.
-</details>
+# Cancel stuck evolution
+gh run cancel <run-id>
+```
 
-### Troubleshooting Guide
-
-| Issue | Solution |
-|-------|----------|
-| "Workflow not found" | Ensure `.github/workflows/ai_evolver.yml` is on main branch |
-| "AI API error" | Check API key and endpoint configuration |
-| "Changes won't apply" | Verify GitHub PAT has write permissions |
-| "Tests failing" | Review AI changes, may need manual adjustment |
-| "High token usage" | Use `.gptignore` to exclude large files |
+#### Issue: "Merge Conflicts"
+```bash
+# AI will attempt resolution, if failed:
+git checkout evolution/branch-name
+git rebase main
+# Resolve conflicts manually
+git push --force-with-lease
+```
 
 ### Performance Optimization
 
-- **Large Repositories**: Use `.gptignore` to exclude unnecessary files
-- **Slow Evolutions**: Enable incremental mode for faster processing
-- **High Costs**: Set cost limits and use efficient models
-- **Memory Issues**: Enable streaming mode for large changes
+1. **Reduce Context Size**
+   - Use `.gptignore` effectively
+   - Archive old code
+   - Split large files
 
----
+2. **Optimize Prompts**
+   - Be specific and concise
+   - Provide examples
+   - Set clear constraints
+
+3. **Cache Responses**
+   - Enable response caching
+   - Reuse similar evolutions
 
 ## 📎 Appendices
 
@@ -654,37 +624,54 @@ A: Yes! Edit `.evolution.yml` to configure strategies, constraints, and behavior
 
 | Term | Definition |
 |------|------------|
-| **Evolution** | An AI-driven change cycle to the repository |
-| **Evolution Engine** | The system that orchestrates AI-driven changes |
-| **Prompt** | Natural language instruction for the AI |
-| **Context** | Repository snapshot sent to the AI |
-| **Strategy** | Approach used for making changes (conservative, balanced, etc.) |
+| **Evolution** | An AI-driven change cycle |
+| **Strategy** | Approach to making changes (conservative, balanced, etc.) |
+| **Context** | Complete repository state provided to AI |
+| **Seed Files** | Initial files that bootstrap the repository |
+| **Evolution Metrics** | Measurements of evolution success and impact |
 
 ### Related Projects
 
 - [GitHub Copilot](https://github.com/features/copilot) - AI pair programming
-- [Semantic Release](https://semantic-release.gitbook.io/) - Automated versioning
-- [Renovate](https://www.renovatebot.com/) - Dependency updates
-- [Sourcegraph Cody](https://sourcegraph.com/cody) - AI code assistant
+- [Semantic Release](https://github.com/semantic-release/semantic-release) - Automated versioning
+- [Renovate](https://github.com/renovatebot/renovate) - Dependency updates
 
-### Academic References
+### Academic Papers & Inspiration
 
-1. *"Automated Code Evolution through Large Language Models"* - Smith et al., 2024
-2. *"Self-Improving Software Systems"* - Johnson & Lee, 2023
-3. *"AI-Driven Development: A New Paradigm"* - Chen et al., 2024
+1. "Automated Software Evolution through Machine Learning" (2024)
+2. "Self-Modifying Code: A Comprehensive Survey" (2023)
+3. "The Future of Software Development: AI-Driven Workflows" (2024)
 
-### License
+### Roadmap & Vision
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
+#### Phase 1 (Current) ✅
+- Basic evolution capabilities
+- Multi-provider support
+- Documentation automation
+
+#### Phase 2 (Q3 2025) 🚧
+- Multi-repository orchestration
+- Visual evolution designer
+- Real-time collaboration
+
+#### Phase 3 (Q1 2026) 📅
+- AI pair programming mode
+- Evolution marketplace
+- Cross-repository learning
+
+#### Phase 4 (Future) 🔮
+- Natural language voice commands
+- Predictive evolution suggestions
+- Fully autonomous development
 
 ---
 
 <div align="center">
 
-**README Last Updated by AI:** 2025-06-14 04:56:35 UTC  
-**Repository Owner:** bamr87  
-**Current Version:** 0.1.0
+**🌱 Plant the seed. Watch it grow. Let AI evolve your code. 🌱**
 
-Made with ❤️ by humans and AI
+*Created with ❤️ by the AI Evolution Engine Community*
+
+[Report Bug](https://github.com/bamr87/ai-evolution-engine/issues) · [Request Feature](https://github.com/bamr87/ai-evolution-engine/issues) · [Join Discord](https://discord.gg/ai-evolution)
 
 </div>
